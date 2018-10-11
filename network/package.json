@@ -1,0 +1,26 @@
+{
+  "name": "hlf-network",
+  "version": "1.0.0",
+  "description": "A Boilerplate for an automated HLF network",
+  "author": "Maurice Dalderup <Maurice_Dalderup@hotmail.com>",
+  "main": "dist/server/server.js",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=8.12.0",
+    "npm": ">=6.4.0",
+    "yarn": ">=1.10.0"
+  },
+  "scripts": {
+    "logs": "docker ps -f 'name=dev-peer0.org1' --format '{{.ID}}' | docker logs -f $(xargs)",
+    "scripts": "chmod +x ./scripts/* && chmod +x ./__Network__/*.sh && cd ./scripts",
+    "prestart": "cd chaincode && npm run build && cd ..",
+    "start": "npm run scripts && cd ./scripts && ./start.sh",
+    "start:test": "npm run scripts && ./start.sh startAndTest",
+    "install": "npm run scripts && ./start.sh install",
+    "update": "npm run scripts && ./start.sh upgrade",
+    "test:cli": "npm run scripts && ./start.sh test",
+    "test": "cd chaincode && yarn && yarn test",
+    "clean": "npm run scripts && ./clean.sh"
+  }
+}
