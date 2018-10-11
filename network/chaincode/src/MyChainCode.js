@@ -6,7 +6,11 @@ import shim from "fabric-shim";
 import recordWatch from "./Watch/Create";
 import queryAllWatch from "./Watch/QueryAll";
 import queryById from "./Watch/Query";
+
 import createPort from "./Schipment/CreatePort";
+import createCargo from "./Schipment/CreateCargo";
+import createSchip from "./Schipment/CreateSchip";
+import createSchipment from "./Schipment/CreateSchipment";
 
 // Helpers
 import * as ErrMsg from "./utils/ErrorMessages";
@@ -35,7 +39,11 @@ const Chaincode = class {
     this.recordWatch = recordWatch;
     this.queryWatchById = queryById;
     this.queryAllWatches = queryAllWatch;
+
     this.createPort = createPort;
+    this.createCargo = createCargo;
+    this.createSchip = createSchip;
+    this.createSchipment = createSchipment;
 
     return shim.success();
   }
