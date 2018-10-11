@@ -1,0 +1,18 @@
+= WSE-OBD API Documentation
+Joachim Geerts<joachim.geerts@bewire.be>
+1.0.0, 26/6/2018
+:toc: left
+:sectnums:
+
+== Introduction
+This is a Spring REST Docs documentation of the WSE-ODB blockchain API.
+
+
+include::accreditation.adoc[]
+
+include::course.adoc[]
+
+include::module.adoc[]
+
+
+

@@ -1,0 +1,282 @@
+[
+  {
+    "aanvraagNummer": "ea18d282-40fd-4909-8701-3cde4ed2f96d",
+    "onderneming": {
+      "ondernemingID": 48621,
+      "ondernemingsnummer": "0467132994"
+    },
+    "aanvraagType": "OC",
+    "paritairComite": null,
+    "naamOpleiding": "project K test 012",
+    "referentie": "003",
+    "website": null,
+    "eerstVolgendeDatum": "2018-09-26",
+    "doelgroepOpleiding": "test group",
+    "urenAfstandonderwijs": "",
+    "urenContactonderwijs": "",
+    "urenWerkplekleren": "",
+    "studiepunten": "100",
+    "inhoud": "testing things",
+    "metModules": false,
+    "werkplekleren": "NIET",
+    "modules": [],
+    "doelgroepcode": "GID",
+    "ingediendOp": "2018-09-26T09:40:14.493",
+    "documenten": [],
+    "zelfanalyse": [
+      {
+        "code": "BASISVAARDIGHEDEN",
+        "deelgebied": [
+          {
+            "code": "GELETTERDHEID",
+            "value": false
+          },
+          {
+            "code": "REKENVAARDIGHEID",
+            "value": false
+          },
+          {
+            "code": "ICT_BASIS",
+            "value": false
+          }
+        ],
+        "value": false
+      },
+      {
+        "code": "TAALOPLEIDING",
+        "deelgebied": [
+          {
+            "code": "NL",
+            "value": false
+          },
+          {
+            "code": "FR",
+            "value": false
+          },
+          {
+            "code": "DE",
+            "value": false
+          },
+          {
+            "code": "EN",
+            "value": false
+          }
+        ],
+        "niveau": "Geen",
+        "value": false
+      },
+      {
+        "code": "DIPLOMA_SECUNDAIR_BEROEPKWALIFICATIE",
+        "beroep": "",
+        "kwalificatie": "DIPLOMA_SECUNDAIR_ONDERWIJS",
+        "value": false
+      },
+      {
+        "code": "DIPLOMA_HOGER_ONDERWIJS",
+        "value": false
+      },
+      {
+        "code": "NEDERLANDS_ANDERSTALIGEN",
+        "value": false
+      },
+      {
+        "code": "EXAMENCOMMISSIE_SECUNDAIR",
+        "value": true
+      },
+      {
+        "code": "KNELPUNTBEROEP",
+        "knelpuntberoep": "",
+        "value": false
+      },
+      {
+        "code": "STEM_OPLEIDING",
+        "value": true
+      },
+      {
+        "code": "TOEKOMSTIG_TEKORT",
+        "document_uri": [],
+        "value": false,
+        "url": ""
+      },
+      {
+        "code": "VERPLICHT_ATTEST",
+        "wet": "",
+        "attest": "",
+        "value": false
+      },
+      {
+        "code": "COMMUNICATIE_SAMENWERKING",
+        "value": false
+      },
+      {
+        "code": "SOCIAAL_OVERLEG",
+        "value": false
+      },
+      {
+        "code": "OMGAAN_INFORMATIE",
+        "value": true
+      },
+      {
+        "code": "ONTWIKKELINGSPOTENTIEEL",
+        "value": true
+      },
+      {
+        "code": "ONDERNEMERSZIN_ONDERNEMERSCHAP",
+        "value": true
+      }
+    ],
+    "hashedDocs": [
+      {
+        "details": {
+          "name": "ODB_aanvraag_overzicht.pdf",
+          "uri": "EO/ea18d282-40fd-4909-8701-3cde4ed2f96d/ODB_aanvraag_overzicht.pdf",
+          "publiek": true,
+          "privaat": false
+        },
+        "checksum": "1fa4aa7c3bcb83fa2a3ea6432460de6c"
+      }
+    ],
+    "timestamp": 1537948752,
+    "dateAddedToChainString": "26-09-2018 09:59:12"
+  },
+  {
+    "aanvraagNummer": "ea18d282-40fd-4909-8701-3cde4ed2f96d",
+    "onderneming": {
+      "ondernemingID": 48621,
+      "ondernemingsnummer": "0467132994"
+    },
+    "aanvraagType": "OC",
+    "paritairComite": null,
+    "naamOpleiding": "project K test 012",
+    "referentie": "003",
+    "website": null,
+    "eerstVolgendeDatum": "2018-09-26",
+    "doelgroepOpleiding": "test group",
+    "urenAfstandonderwijs": "",
+    "urenContactonderwijs": "",
+    "urenWerkplekleren": "",
+    "studiepunten": "100",
+    "inhoud": "testing things",
+    "metModules": false,
+    "werkplekleren": "NIET",
+    "modules": [],
+    "doelgroepcode": "GID",
+    "ingediendOp": "2018-09-26T09:40:14.493",
+    "documenten": [],
+    "zelfanalyse": [
+      {
+        "code": "BASISVAARDIGHEDEN",
+        "deelgebied": [
+          {
+            "code": "GELETTERDHEID",
+            "value": false
+          },
+          {
+            "code": "REKENVAARDIGHEID",
+            "value": false
+          },
+          {
+            "code": "ICT_BASIS",
+            "value": false
+          }
+        ],
+        "value": false
+      },
+      {
+        "code": "TAALOPLEIDING",
+        "deelgebied": [
+          {
+            "code": "NL",
+            "value": false
+          },
+          {
+            "code": "FR",
+            "value": false
+          },
+          {
+            "code": "DE",
+            "value": false
+          },
+          {
+            "code": "EN",
+            "value": false
+          }
+        ],
+        "niveau": "Geen",
+        "value": false
+      },
+      {
+        "code": "DIPLOMA_SECUNDAIR_BEROEPKWALIFICATIE",
+        "beroep": "",
+        "kwalificatie": "DIPLOMA_SECUNDAIR_ONDERWIJS",
+        "value": false
+      },
+      {
+        "code": "DIPLOMA_HOGER_ONDERWIJS",
+        "value": false
+      },
+      {
+        "code": "NEDERLANDS_ANDERSTALIGEN",
+        "value": false
+      },
+      {
+        "code": "EXAMENCOMMISSIE_SECUNDAIR",
+        "value": true
+      },
+      {
+        "code": "KNELPUNTBEROEP",
+        "knelpuntberoep": "",
+        "value": false
+      },
+      {
+        "code": "STEM_OPLEIDING",
+        "value": true
+      },
+      {
+        "code": "TOEKOMSTIG_TEKORT",
+        "document_uri": [],
+        "value": false,
+        "url": ""
+      },
+      {
+        "code": "VERPLICHT_ATTEST",
+        "wet": "",
+        "attest": "",
+        "value": false
+      },
+      {
+        "code": "COMMUNICATIE_SAMENWERKING",
+        "value": false
+      },
+      {
+        "code": "SOCIAAL_OVERLEG",
+        "value": false
+      },
+      {
+        "code": "OMGAAN_INFORMATIE",
+        "value": true
+      },
+      {
+        "code": "ONTWIKKELINGSPOTENTIEEL",
+        "value": true
+      },
+      {
+        "code": "ONDERNEMERSZIN_ONDERNEMERSCHAP",
+        "value": true
+      }
+    ],
+    "hashedDocs": [
+      {
+        "details": {
+          "name": "ODB_aanvraag_overzicht.pdf",
+          "uri": "EO/ea18d282-40fd-4909-8701-3cde4ed2f96d/ODB_aanvraag_overzicht.pdf",
+          "publiek": true,
+          "privaat": false
+        },
+        "checksum": "1fa4aa7c3bcb83fa2a3ea6432460de6c"
+      }
+    ],
+    "timestamp": 1537948752,
+    "dateAddedToChainString": "26-09-2050 09:59:12"
+  }
+]
