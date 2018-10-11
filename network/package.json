@@ -15,7 +15,7 @@
     "logs": "docker ps -f 'name=dev-peer0.org1' --format '{{.ID}}' | docker logs -f $(xargs)",
     "scripts": "chmod +x ./scripts/* && chmod +x ./__Network__/*.sh && cd ./scripts",
     "prestart": "cd chaincode && npm run build && cd ..",
-    "start": "npm run scripts && ./start.sh",
+    "start": "npm run scripts && cd ./scripts && ./start.sh",
     "start:test": "npm run scripts && ./start.sh startAndTest",
     "install": "npm run scripts && ./start.sh install",
     "update": "npm run scripts && ./start.sh upgrade",
