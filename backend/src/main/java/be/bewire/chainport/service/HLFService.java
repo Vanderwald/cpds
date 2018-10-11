@@ -35,29 +35,34 @@ public class HLFService {
 
     @Autowired
     public HLFService(HLFConfig hlfConfig) throws Exception {
-        // Get config
-        setMyHlfConfig(hlfConfig);
+        try {
+            // Get config
+            setMyHlfConfig(hlfConfig);
 
-        // create fabric-ca client
-        setMyHfcaClient(getHfCaClient(getMyHlfConfig().getCaUrl(), null));
+            // create fabric-ca client
+            setMyHfcaClient(getHfCaClient(getMyHlfConfig().getCaUrl(), null));
 
-        // enroll or load admin
-        AppUser admin = getAdmin();
-        log.info(admin);
+            // enroll or load admin
+            AppUser admin = getAdmin();
+            log.info(admin);
 
-        // register and enroll new user
-        AppUser appUser = getUser(admin, getMyHlfConfig().getUsername());
-        log.info(appUser);
+            // register and enroll new user
+            AppUser appUser = getUser(admin, getMyHlfConfig().getUsername());
+            log.info(appUser);
 
-        // get HFC client instance
-        setMyClient(getHfClient());
+            // get HFC client instance
+            setMyClient(getHfClient());
 
-        // set user context
-        getMyClient().setUserContext(admin);
+            // set user context
+            getMyClient().setUserContext(admin);
 
-        // get HFC channel using the client
-        setMyChannel(getChannel());
-        log.info("Channel: " + getMyChannel().getName());
+            // get HFC channel using the client
+            setMyChannel(getChannel());
+            log.info("Channel: " + getMyChannel().getName());
+        } catch (Exception e) {
+            log.error("Failed to initialize HLFService", e);
+            throw e;
+        }
     }
 
     /**
