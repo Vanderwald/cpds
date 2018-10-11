@@ -6,6 +6,7 @@ import shim from "fabric-shim";
 import recordWatch from "./Watch/Create";
 import queryAllWatch from "./Watch/QueryAll";
 import queryById from "./Watch/Query";
+import createPort from "./Schipment/CreatePort";
 
 // Helpers
 import * as ErrMsg from "./utils/ErrorMessages";
@@ -34,6 +35,7 @@ const Chaincode = class {
     this.recordWatch = recordWatch;
     this.queryWatchById = queryById;
     this.queryAllWatches = queryAllWatch;
+    this.createPort = createPort;
 
     return shim.success();
   }
