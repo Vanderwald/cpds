@@ -1,0 +1,4 @@
+#Thu Oct 11 13:24:38 CEST 2018
+base.0=/Users/warri/Workspace/ionic/myApp/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
