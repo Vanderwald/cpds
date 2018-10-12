@@ -1,3 +1,5 @@
+import { AuthService } from './../services/auth.service';
+import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -12,12 +14,15 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environments';
-import {NotificationCenterPage} from '../pages/notification-center/notification-center';
+import { NotificationCenterPage } from '../pages/notification-center/notification-center';
+import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    LoginPage,
+    RegisterPage,
     NotificationCenterPage
   ],
   imports: [
@@ -31,13 +36,16 @@ import {NotificationCenterPage} from '../pages/notification-center/notification-
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    LoginPage,
     MyApp,
+    RegisterPage,
     HomePage,
     NotificationCenterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
