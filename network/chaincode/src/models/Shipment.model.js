@@ -33,14 +33,14 @@ const schema = yup.object().shape({
 
 /*
 
-  value = {
-    docType: DocTypes.SHIPMENT
-    this.id = key;
-    this.startingPort = startingPort;
-    this.endingPort = endingPort;
-    this.startingTimestamp = startingTimestamp;
-    this.endingTimestamp = endingTimestamp;
-    this.schip = schip;
-    this.cargo = cargo;
-  }
+{
+	"id": "SHIPMENT-1",
+	"docType": "SHIPMENT",
+    "startingPort": "PORT-1",
+    "endingPort": "PORT-3",
+    "startingTimestamp": "2018-10-12/11:50:00",
+    "endingTimestamp": "2018-10-18/11:50:00",
+    "ship": "SHIP-1",
+    "cargo": "CARGO-1"
+}
   */

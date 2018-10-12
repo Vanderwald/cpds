@@ -2,7 +2,7 @@ import { toState } from "../utils/Parser";
 
 // const DocTypes = require("../utils/DocTypes");
 
-export default class Port {
+export default class Party {
   constructor(key, value) {
     this.key = key;
     this.value = value;
@@ -32,11 +32,13 @@ const schema = yup.object().shape({
   */
 
 /*
-  value = {
-    docType: DocTypes.PORT
-    this.id = key;
-    this.city = city;
-    this.country = country;
-    this.name = name;
-  }
+  {
+	"id": "SENSOR-1",
+	"docType": "SENSOR",
+    "city": "Sea",
+    "country": "Sea",
+    "name": "SENSOR of Sea",
+    "company": "Sensable",
+    "VAT-number": "NL1234.56.789.B01"
+}
   */

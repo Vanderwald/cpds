@@ -3,10 +3,12 @@ import "@babel/polyfill";
 import shim from "fabric-shim";
 
 // Invocations/Queries
-import createPort from "./Shipment/CreatePort";
+import createParty from "./Shipment/CreateParty";
 import createCargo from "./Shipment/CreateCargo";
 import createShip from "./Shipment/CreateShip";
 import createShipment from "./Shipment/CreateShipment";
+import createDocument from "./Shipment/CreateDocument";
+import sendUpdateMessage from "./Shipment/SendUpdateMessage";
 import init from "./utils/InitLedger";
 
 // Helpers
@@ -33,11 +35,13 @@ const Chaincode = class {
   }
 
   async Init(stub) {
-    await init(stub);
-    this.createPort = createPort;
+    // await init(stub);
+    this.createParty = createParty;
     this.createCargo = createCargo;
     this.createShip = createShip;
     this.createShipment = createShipment;
+    this.createDocument = createDocument;
+    this.sendUpdateMessage = sendUpdateMessage;
     this.history = (myStub, { key }) => queryAuditTrail(myStub, key);
 
     return shim.success();

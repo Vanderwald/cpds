@@ -2,7 +2,7 @@ import { toState } from "../utils/Parser";
 
 // const DocTypes = require("../utils/DocTypes");
 
-export default class Schipment {
+export default class Message {
   constructor(key, value) {
     this.key = key;
     this.value = value;
@@ -33,10 +33,16 @@ const schema = yup.object().shape({
 
 /*
 {
-	"id": "CARGO-2",
-	"docType": "CARGO",
-    "type": "toxicAF",
-    "weight": "23000",
-    "containerCount": "140"
+	"id": "MESSAGE-3",
+	"docType": "MESSAGE",
+    "createdAt":"2018-10-12/13:50:00",
+    "from": "CARRIER-1",
+    "type": "status-change",
+    "content": "azopieruazpeoiruazoieurazoieurzaopieurazpioeurpazoieurpaozieru",
+    "status": "unloading containers",
+    "carrierOnly": {
+        "estimatedETA": "-1d",
+        "document": "DOCUMENT-1"
+    }
 }
   */

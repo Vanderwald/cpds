@@ -32,10 +32,18 @@ const schema = yup.object().shape({
   */
 
 /*
-  value = {
-    docType: DocTypes.SHIP
-    this.key = key;
-    this.modelNumber = modelNumber;
-    this.owner = owner;
-  }
+{
+	"id": "SHIP-2",
+	"docType": "SHIP",
+    "modelNumber": "PU-5635",
+    "owner": "Marco",
+    "name": "AVE MARIA",
+    "callSign": "CQLV",
+    "flag": "PL",
+    "grossWeight": "5955",
+    "length": "118",
+    "breadth": "18",
+    "type": "CHTAN",
+    "MMSInumber": "25580"
+}
   */

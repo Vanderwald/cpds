@@ -1,7 +1,7 @@
 import Cargo from "../models/Cargo.model";
 import Ship from "../models/Ship.model";
 import { CARGO, PORT, SHIP, SHIPMENT } from "./DocTypes";
-import Port from "../models/Port.model";
+import Party from "../models/Party.model";
 import Shipment from "../models/Shipment.model";
 
 async function init(stub) {
@@ -21,7 +21,7 @@ async function init(stub) {
     containerCount: "1"
   });
 
-  const port = new Port("PORT-1", {
+  const port = new Party("PORT-1", {
     docType: PORT,
     id: "PORT-1",
     city: "NotMurica",
@@ -29,7 +29,7 @@ async function init(stub) {
     name: "myName"
   });
 
-  const port2 = new Port("PORT-2", {
+  const port2 = new Party("PORT-2", {
     docType: PORT,
     id: "PORT-2",
     city: "NotMurica",
