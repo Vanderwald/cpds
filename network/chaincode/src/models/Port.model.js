@@ -33,8 +33,8 @@ const schema = yup.object().shape({
 
 /*
   value = {
-      docType: DocTypes.PORT
-    this.key = key;
+    docType: DocTypes.PORT
+    this.id = key;
     this.city = city;
     this.country = country;
     this.name = name;

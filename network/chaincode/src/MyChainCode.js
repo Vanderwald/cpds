@@ -3,10 +3,10 @@ import "@babel/polyfill";
 import shim from "fabric-shim";
 
 // Invocations/Queries
-import createPort from "./Schipment/CreatePort";
-import createCargo from "./Schipment/CreateCargo";
-import createShip from "./Schipment/CreateShip";
-import createShipment from "./Schipment/CreateShipment";
+import createPort from "./Shipment/CreatePort";
+import createCargo from "./Shipment/CreateCargo";
+import createShip from "./Shipment/CreateShip";
+import createShipment from "./Shipment/CreateShipment";
 import init from "./utils/InitLedger";
 
 // Helpers

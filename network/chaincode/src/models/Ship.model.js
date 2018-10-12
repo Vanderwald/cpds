@@ -33,7 +33,7 @@ const schema = yup.object().shape({
 
 /*
   value = {
-    docType: DocTypes.SCHIP
+    docType: DocTypes.SHIP
     this.key = key;
     this.modelNumber = modelNumber;
     this.owner = owner;

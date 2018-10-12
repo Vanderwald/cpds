@@ -34,8 +34,8 @@ const schema = yup.object().shape({
 /*
 
   value = {
-    docType: DocTypes.SCHIPMENT
-    this.key = key;
+    docType: DocTypes.SHIPMENT
+    this.id = key;
     this.startingPort = startingPort;
     this.endingPort = endingPort;
     this.startingTimestamp = startingTimestamp;
