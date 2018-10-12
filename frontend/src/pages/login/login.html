@@ -14,29 +14,32 @@
 
 
 <ion-content padding>
-        <form (ngSubmit)="loginUser()" #registerForm="ngForm">
-            <ion-row>
-              <ion-col>
-                <ion-list inset>
-                  
-                  <ion-item>
-                    <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
-                  </ion-item>
-                  
-                  <ion-item>
-                    <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
-                  </ion-item>
-                  
-                </ion-list>
-              </ion-col>
-            </ion-row>
-            
-            <ion-row>
-              <ion-col class="signup-col">
-                <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
-              </ion-col>
-            </ion-row>
-          </form>
-          <button ion-button class="register-btn" block clear (click)="registerPage()">Create New Account</button>
+  <form (ngSubmit)="loginUser()" #registerForm="ngForm">
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
 
-        </ion-content>
+          <ion-item>
+            <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email"
+                       required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password"
+                       required></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="signup-col">
+        <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+      </ion-col>
+    </ion-row>
+  </form>
+  <button ion-button class="register-btn" block clear (click)="registerPage()">Create New Account</button>
+
+  <p class='error-message' *ngIf="hasError">{{errorMessage}}</p>
+</ion-content>

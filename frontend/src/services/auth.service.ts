@@ -18,7 +18,7 @@ export class AuthService {
   }
 
   login(email, password) {
-    this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    /*this.afAuth.auth.signInWithEmailAndPassword(email, password)
     .then(() => {
       this.isLoggedIn = true;
     })
@@ -27,7 +27,9 @@ export class AuthService {
       const errorMessage = error.message;
       console.log('errorCode', errorCode);
       console.log('errorCode', errorMessage);
-    });
+      return;
+    });*/
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
   logout() {

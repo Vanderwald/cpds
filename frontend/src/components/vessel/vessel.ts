@@ -12,7 +12,6 @@ export class VesselComponent {
   @Input()
   vessel;
   constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController) {
-    console.log('Hello VesselComponent Component');
     this.text = 'Hello World';
   }
 
