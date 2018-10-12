@@ -1,31 +1,11 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Dashboard</ion-title>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <div class="row">
-    <div class="left-content">
-      <ion-list>
-        <ion-item *ngFor="let i of items">{{i}}</ion-item>
-      </ion-list>
-
-      <ion-infinite-scroll *ngIf="hasMoreData" (ionInfinite)="doInfinite($event)">
-        <ion-infinite-scroll-content></ion-infinite-scroll-content>
-      </ion-infinite-scroll>
-    </div>
-    <div class="right-content">
-      <div class="dashboard-info">
-
-      </div>
-      <div class="dashboard-info">
-
-      </div>
-    </div>
-  </div>
-
+ <vessel></vessel>
 </ion-content>
