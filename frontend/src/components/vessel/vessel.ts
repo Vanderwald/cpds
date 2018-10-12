@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import {ActionSheetController, NavController} from 'ionic-angular';
-import {NotificationCenterPage} from '../../pages/notification-center/notification-center';
+import { Component, Input } from '@angular/core';
+import { ActionSheetController, NavController } from 'ionic-angular';
+import { NotificationCenterPage } from '../../pages/notification-center/notification-center';
 import {PortCallPage} from '../../pages/port-call/port-call';
 
 /**
@@ -14,9 +14,10 @@ import {PortCallPage} from '../../pages/port-call/port-call';
   templateUrl: 'vessel.html'
 })
 export class VesselComponent {
-
   text: string;
 
+  @Input()
+  vessel;
   constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController) {
     console.log('Hello VesselComponent Component');
     this.text = 'Hello World';
@@ -29,19 +30,22 @@ export class VesselComponent {
         {
           text: 'Notification center',
           handler: () => {
-            this.navCtrl.push(NotificationCenterPage, {vessel: {id: '12345'}});
+            this.navCtrl.push(NotificationCenterPage, { vessel: { id: this.vessel.vesselName } });
           }
-        },{
+        },
+        {
           text: 'Cancel',
           handler: () => {
             console.log('cancel vessel');
           }
-        },{
+        },
+        {
           text: 'Delayed',
           handler: () => {
             console.log('Delayed');
           }
-        },{
+        },
+        {
           text: 'Port call',
           handler: () => {
             console.log('go to port call');
