@@ -1,3 +1,17 @@
 notification {
-
+  .notification {
+    // display: flex;
+    background-color: rgba(69, 95, 109, 1);
+    // height: 50px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    padding: 10px;
+    align-items: center;
+  }
+  .text {
+    color: white;
+  }
+  .header {
+    display: flex;
+  }
 }

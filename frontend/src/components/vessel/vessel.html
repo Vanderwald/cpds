@@ -1,9 +1,9 @@
 <!-- Generated template for the VesselComponent component -->
 <div class="container" (click)="showActions()">
-  <p>{{vessel.arrival}}</p>
+  <p class="bold">{{vessel.arrival}}</p>
   <div class="mid-content">
-    <p>{{vessel.vesselName}}</p>
-    <ion-icon name="boat"></ion-icon>
-    <p>ETA {{vessel.eta}}</p>
+    <p class="bold title">{{vessel.vesselName}}</p>
+    <ion-icon name="boat" class="icon"></ion-icon>
+    <p class="secundary-text">ETA {{vessel.eta}}</p>
   </div>
-  <p>{{vessel.department}}</p>
+  <p class="bold">{{vessel.department}}</p>

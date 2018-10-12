@@ -12,12 +12,7 @@ import { Component, Input } from '@angular/core';
 })
 export class NotificationComponent {
   @Input()
-  text: string;
-  @Input()
-  timestamp;
+  notification;
 
-  constructor() {
-
-  }
-
+  constructor() {}
 }

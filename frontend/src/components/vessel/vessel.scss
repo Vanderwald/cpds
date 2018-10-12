@@ -6,7 +6,7 @@
 vessel {
   .container {
     padding: 10px;
-    border-bottom: 1px solid rgba(213, 213, 213, 1);
+    border-bottom: 1px solid rgba(211, 218, 192, 1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,5 +15,21 @@ vessel {
     justify-content: center;
     align-content: center;
     text-align: center;
+  }
+  .bold {
+    font-weight: 500;
+    color: rgba(69, 95, 109, 1);
+  }
+  .title {
+    font-size: 17px;
+    font-weight: 600;
+    color: rgba(31, 51, 64, 1);
+  }
+  .secundary-text {
+    color: rgba(150, 169, 158, 1);
+    font-size: 12px;
+  }
+  .icon {
+    color: rgba(69, 95, 109, 1);
   }
 }
