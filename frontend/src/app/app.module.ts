@@ -6,17 +6,23 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+<<<<<<< HEAD
 import { ComponentsModule } from '../components/components.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environments';
+=======
+import {ComponentsModule} from '../components/components.module';
+import {NotificationCenterPage} from '../pages/notification-center/notification-center';
+>>>>>>> notification-center
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    NotificationCenterPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,8 @@ import { environment } from '../environments/environments';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    NotificationCenterPage
   ],
   providers: [
     StatusBar,
