@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActionSheetController, NavController } from 'ionic-angular';
 import { NotificationCenterPage } from '../../pages/notification-center/notification-center';
+import {PortCallPage} from '../../pages/port-call/port-call';
 
 /**
  * Generated class for the VesselComponent component.
@@ -26,16 +27,11 @@ export class VesselComponent {
     console.log('show action');
     const actionSheet = this.actionSheetCtrl.create({
       buttons: [
-        // {
-        //   text: 'Notification center',
-        //   handler: () => {
-        //     this.navCtrl.push(NotificationCenterPage, { vessel: { id: this.vessel.vesselName } });
-        //   }
-        // },
         {
           text: 'Port call',
           handler: () => {
-            console.log('Port call');
+            console.log('go to port call');
+            this.navCtrl.push(PortCallPage, {vessel: {id: '12345'}});
           }
         },
         {
@@ -47,7 +43,7 @@ export class VesselComponent {
         {
           text: 'Cancel',
           handler: () => {
-            console.log('cancel');
+            console.log('cancel vessel');
           }
         }
       ]

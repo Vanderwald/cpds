@@ -14,16 +14,18 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environments';
-import { NotificationCenterPage } from '../pages/notification-center/notification-center';
+import {NotificationCenterPage} from '../pages/notification-center/notification-center';
+import {PortCallPage} from '../pages/port-call/port-call';
 import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    NotificationCenterPage,
+    PortCallPage,
     LoginPage,
-    RegisterPage,
-    NotificationCenterPage
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { RegisterPage } from '../pages/register/register';
     MyApp,
     RegisterPage,
     HomePage,
-    NotificationCenterPage
+    NotificationCenterPage,
+    PortCallPage
   ],
   providers: [
     StatusBar,
