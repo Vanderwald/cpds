@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-  <div class="actions">
+  <div class="actions" *ngIf="!completed">
     <button ion-button (click)="arrivedAtPort()" class="action-button" [disabled]="actions[0].checked">
       <p>{{actions[0].name}}</p>
       <span *ngIf="actions[0].timestamp">{{actions[0].timestamp | date:'short'}}</span>
@@ -24,7 +24,7 @@
       <span *ngIf="actions[1].timestamp">{{actions[1].timestamp | date:'medium'}}</span>
     </button>
   </div>
-  <div class="actions">
+  <div class="actions" *ngIf="!completed">
     <button ion-button (click)="startDischarging()" class="action-button" [disabled]="!actions[1].checked || actions[2].checked">
       <p>{{actions[2].name}}</p>
       <span *ngIf="actions[2].timestamp">{{actions[2].timestamp | date:'medium'}}</span>
@@ -33,5 +33,10 @@
       <p>{{actions[3].name}}</p>
       <span *ngIf="actions[3].timestamp">{{actions[3].timestamp | date:'medium'}}</span>
     </button>
+  </div>
+
+  <div class="completed" *ngIf="completed">
+    <p>{{vessel.id}} completed</p>
+    <ion-icon name="checkmark"></ion-icon>
   </div>
 </ion-content>
