@@ -7,6 +7,9 @@
         <button ion-button icon-only (click)="goToNotifs()">
             <ion-icon name="notifications"></ion-icon>
         </button>
+        <button ion-button icon-only (click)="logoutUser()">
+            <ion-icon name="log-out"></ion-icon>
+        </button>
       </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -14,4 +17,6 @@
 <ion-content padding>
  <vessel [vessel]="vessel"></vessel>
  <vessel [vessel]="vessel"></vessel>
+
+ <!-- <button full ion-button color="danger" (click)="logoutUser()">Logout</button> -->
 </ion-content>
