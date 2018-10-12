@@ -1,3 +1,5 @@
+import { AuthService } from './../services/auth.service';
+import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -14,13 +16,16 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environments';
 import {NotificationCenterPage} from '../pages/notification-center/notification-center';
 import {PortCallPage} from '../pages/port-call/port-call';
+import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     NotificationCenterPage,
-    PortCallPage
+    PortCallPage,
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,9 @@ import {PortCallPage} from '../pages/port-call/port-call';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    LoginPage,
     MyApp,
+    RegisterPage,
     HomePage,
     NotificationCenterPage,
     PortCallPage
@@ -41,6 +48,7 @@ import {PortCallPage} from '../pages/port-call/port-call';
   providers: [
     StatusBar,
     SplashScreen,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

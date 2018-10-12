@@ -6,12 +6,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs-compat';
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = LoginPage;
   vessels: Observable<any[]>;
   users: Observable<any[]>;
 
@@ -21,7 +22,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      
+
       this.vessels = db.collection('vessels').valueChanges();
       this.users = db.collection('users').valueChanges();
     });
