@@ -24,7 +24,7 @@ const iteratorExecutor = async iterator => {
   } while (!result.done);
 
   await iterator.close();
-  return toState(allResults);
+  return allResults;
 };
 
 export default iteratorExecutor;

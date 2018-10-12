@@ -23,3 +23,7 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### Hyperledger stuff
+_hlfUser.json
+admin.json
