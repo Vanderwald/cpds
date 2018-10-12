@@ -8,12 +8,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {ComponentsModule} from '../components/components.module';
 import {NotificationCenterPage} from '../pages/notification-center/notification-center';
+import {PortCallPage} from '../pages/port-call/port-call';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    NotificationCenterPage
+    NotificationCenterPage,
+    PortCallPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import {NotificationCenterPage} from '../pages/notification-center/notification-
   entryComponents: [
     MyApp,
     HomePage,
-    NotificationCenterPage
+    NotificationCenterPage,
+    PortCallPage
   ],
   providers: [
     StatusBar,

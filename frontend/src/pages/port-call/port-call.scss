@@ -1,0 +1,19 @@
+page-port-call {
+  .actions {
+    display: flex;
+    flex: 1;
+
+    .action-button {
+      flex: 1;
+      height: calc(50vh - 75px);
+      background: rgba(31, 51, 64, 1.0);
+      color: #fff;
+      font-size: 1.4em;
+      margin: 15px;
+
+      .button-inner {
+        display: inline;
+      }
+    }
+  }
+}
