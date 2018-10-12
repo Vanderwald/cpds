@@ -5,14 +5,20 @@ page-port-call {
 
     .action-button {
       flex: 1;
-      height: calc(50vh - 75px);
+      height: calc(50vh - 55px);
       background: rgba(31, 51, 64, 1.0);
       color: #fff;
-      font-size: 1.4em;
-      margin: 15px;
+      font-size: 1em;
 
       .button-inner {
+        white-space: normal;
         display: inline;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .action-button {
+        height: calc(40vh - 5px);
       }
     }
   }

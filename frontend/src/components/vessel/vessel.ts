@@ -28,15 +28,16 @@ export class VesselComponent {
     const actionSheet = this.actionSheetCtrl.create({
       buttons: [
         {
-          text: 'Notification center',
+          text: 'Port call',
           handler: () => {
-            this.navCtrl.push(NotificationCenterPage, { vessel: { id: this.vessel.vesselName } });
+            console.log('go to port call');
+            this.navCtrl.push(PortCallPage, {vessel: {id: '12345'}});
           }
         },
         {
-          text: 'Cancel',
+          text: 'Notification center',
           handler: () => {
-            console.log('cancel vessel');
+            this.navCtrl.push(NotificationCenterPage, { vessel: { id: this.vessel.vesselName } });
           }
         },
         {
@@ -46,10 +47,9 @@ export class VesselComponent {
           }
         },
         {
-          text: 'Port call',
+          text: 'Cancel',
           handler: () => {
-            console.log('go to port call');
-            this.navCtrl.push(PortCallPage, {vessel: {id: '12345'}});
+            console.log('cancel vessel');
           }
         }
       ]
