@@ -10,28 +10,28 @@ async function CreateSchipment(stub, { key, value }) {
 
   let keyExists = await exists(stub, startingPort);
   if (!keyExists) {
-    throw new Error(ErrMsg.DoesntExist(key));
+    throw new Error(ErrMsg.DoesntExist(startingPort));
   }
 
   keyExists = await exists(stub, endingPort);
   if (!keyExists) {
-    throw new Error(ErrMsg.DoesntExist(key));
+    throw new Error(ErrMsg.DoesntExist(endingPort));
   }
 
   keyExists = await exists(stub, cargo);
   if (!keyExists) {
-    throw new Error(ErrMsg.DoesntExist(key));
+    throw new Error(ErrMsg.DoesntExist(cargo));
   }
 
   keyExists = await exists(stub, schip);
   if (!keyExists) {
-    throw new Error(ErrMsg.DoesntExist(key));
+    throw new Error(ErrMsg.DoesntExist(schip));
   }
 
-  const port1Value = await queryById(startingPort);
-  const port2Value = await queryById(endingPort);
-  const cargoValue = await queryById(cargo);
-  const schipValue = await queryById(schip);
+  const port1Value = await queryById(stub, startingPort);
+  const port2Value = await queryById(stub, endingPort);
+  const cargoValue = await queryById(stub, cargo);
+  const schipValue = await queryById(stub, schip);
 
   const port1 = fromState(port1Value);
   const port2 = fromState(port2Value);
