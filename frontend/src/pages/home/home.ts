@@ -1,27 +1,27 @@
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import moment from 'moment';
 import { AuthService } from '../../services/auth.service';
+import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  vessel = {
-    _id: '5bc0850332c508ab3037ca77',
-    berthName: 537,
-    vesselNumber: 548,
-    vesselName: 'Horn',
-    department: 'Israel',
-    arrival: 'Paraguay',
-    ata: 'Sun Dec 21 2014 10:06:18 GMT+0000 (UTC)',
-    eta: moment('Wed Aug 02 2017 02:29:57 GMT+0000 (UTC)').format('DD/MM/YY hh:mm')
-  };
+
+  vessel: any = [];
 
   constructor(public navCtrl: NavController, 
-    public authService: AuthService) {}
+    public authService: AuthService,
+    db: AngularFirestore) {
+       const collection: AngularFirestoreCollection<any> = db.collection('vessels')
+      console.log('qwjorqwjr', collection);
+      const collection$: Observable<any> = collection.valueChanges()
+      this.vessels = collection;
+      collection$.subscribe(data => console.log(data) )
+    }
 
   logoutUser() {
     this.authService.logout();
