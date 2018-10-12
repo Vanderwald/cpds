@@ -1,11 +1,11 @@
 /* eslint-disable no-param-reassign */
 
-import Schipment from "../models/Shipment.model";
+import Shipment from "../models/Shipment.model";
 import * as ErrMsg from "../utils/ErrorMessages";
 import { exists, queryById } from "../Services/QueryService";
 import { fromState } from "../utils/Parser";
 
-async function CreateSchipment(stub, { key, value }) {
+async function CreateShipment(stub, { key, value }) {
   const { startingPort, endingPort, cargo, ship } = value;
 
   let keyExists = await exists(stub, startingPort);
@@ -43,7 +43,7 @@ async function CreateSchipment(stub, { key, value }) {
   value.cargo = cargoObject;
   value.ship = shipObject;
 
-  const schipment = new Schipment(key, value);
+  const shipment = new Shipment(key, value);
 
   // Check if key already exists
   keyExists = await exists(stub, key);
@@ -51,7 +51,7 @@ async function CreateSchipment(stub, { key, value }) {
     throw new Error(ErrMsg.AlreadyExists(key));
   }
 
-  return stub.putState(key, schipment.getAsBytes());
+  return stub.putState(key, shipment.getAsBytes());
 }
 
-export default CreateSchipment;
+export default CreateShipment;
