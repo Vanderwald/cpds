@@ -42,6 +42,7 @@ export class PortCallPage {
   ];
 
   isDischarging = false;
+  completed = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.vessel = this.navParams.get('vessel');
@@ -77,5 +78,10 @@ export class PortCallPage {
     this.actions[3].checked = true;
     // @ts-ignore
     this.actions[3].timestamp = new Date();
+    this.completed = true;
+
+    setTimeout(() => {
+      this.navCtrl.pop();
+    }, 1000);
   }
 }
