@@ -1,14 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActionSheetController, NavController } from 'ionic-angular';
-import { NotificationCenterPage } from '../../pages/notification-center/notification-center';
 import {PortCallPage} from '../../pages/port-call/port-call';
 
-/**
- * Generated class for the VesselComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'vessel',
   templateUrl: 'vessel.html'
