@@ -2,7 +2,7 @@ import { toState } from "../utils/Parser";
 
 // const DocTypes = require("../utils/DocTypes");
 
-export default class Schipment {
+export default class Shipment {
   constructor(key, value) {
     this.key = key;
     this.value = value;
@@ -32,15 +32,10 @@ const schema = yup.object().shape({
   */
 
 /*
-
   value = {
-    docType: DocTypes.SCHIPMENT
+    docType: DocTypes.SHIP
     this.key = key;
-    this.startingPort = startingPort;
-    this.endingPort = endingPort;
-    this.startingTimestamp = startingTimestamp;
-    this.endingTimestamp = endingTimestamp;
-    this.schip = schip;
-    this.cargo = cargo;
+    this.modelNumber = modelNumber;
+    this.owner = owner;
   }
   */

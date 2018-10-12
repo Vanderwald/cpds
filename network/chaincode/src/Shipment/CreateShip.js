@@ -1,4 +1,4 @@
-import Schip from "../models/Schip.model";
+import Schip from "../models/Ship.model";
 import * as ErrMsg from "../utils/ErrorMessages";
 import { exists } from "../Services/QueryService";
 

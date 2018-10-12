@@ -24,7 +24,7 @@ export default class Schipment {
 /*
 const schema = yup.object().shape({
     docType: yup.string().matches(/(CARGO)/),
-    key: yup.string().required(),
+    id: yup.string().required(),
     type: yup.string().required(),
     weight: yup.string().optional(),
     containerCount: yup.Integer().required()
