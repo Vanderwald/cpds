@@ -1,4 +1,11 @@
 <!-- Generated template for the NotificationComponent component -->
-<div>
-  {{text}}
+<div class="notification">
+  <div class="header">
+    <p class="text">
+        {{notification.timestamp}} - {{notification.vesselname}}
+    </p>
+  </div>
+  <p class="text">
+    {{notification.description}}
+  </p>
 </div>

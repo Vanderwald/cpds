@@ -29,7 +29,7 @@ export class VesselComponent {
         {
           text: 'Notification center',
           handler: () => {
-            this.navCtrl.push(NotificationCenterPage, { vessel: { id: '12345' } });
+            this.navCtrl.push(NotificationCenterPage, { vessel: { id: this.vessel.vesselName } });
           }
         },
         {
