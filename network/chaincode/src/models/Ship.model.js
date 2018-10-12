@@ -2,7 +2,7 @@ import { toState } from "../utils/Parser";
 
 // const DocTypes = require("../utils/DocTypes");
 
-export default class Schipment {
+export default class Shipment {
   constructor(key, value) {
     this.key = key;
     this.value = value;

@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 
-import Schipment from "../models/Schipment.model";
+import Schipment from "../models/Shipment.model";
 import * as ErrMsg from "../utils/ErrorMessages";
 import { exists, queryById } from "../Services/QueryService";
 import { fromState } from "../utils/Parser";

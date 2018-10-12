@@ -5,12 +5,14 @@ import shim from "fabric-shim";
 // Invocations/Queries
 import createPort from "./Schipment/CreatePort";
 import createCargo from "./Schipment/CreateCargo";
-import createSchip from "./Schipment/CreateSchip";
-import createSchipment from "./Schipment/CreateSchipment";
+import createShip from "./Schipment/CreateShip";
+import createShipment from "./Schipment/CreateShipment";
+import init from "./utils/InitLedger";
 
 // Helpers
 import * as ErrMsg from "./utils/ErrorMessages";
 import { deriveKeyValue } from "./utils/Parser";
+import { queryAuditTrail } from "./Services/QueryService";
 
 const Chaincode = class {
   async Invoke(stub) {
@@ -31,12 +33,12 @@ const Chaincode = class {
   }
 
   async Init() {
-    // Bind other functions
-
+    this.init = () => init();
     this.createPort = createPort;
     this.createCargo = createCargo;
-    this.createSchip = createSchip;
-    this.createSchipment = createSchipment;
+    this.createShip = createShip;
+    this.createShipment = createShipment;
+    this.history = key => queryAuditTrail(key);
 
     return shim.success();
   }

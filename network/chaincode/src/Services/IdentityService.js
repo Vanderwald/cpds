@@ -8,7 +8,6 @@ export const setIdentity = clientIdentity => {
 
 export const getIdentity = () => identity;
 
-export const getIdentityAttribute = attrName =>
-  identity.getAttributeValue(attrName);
+export const getIdentityAttribute = attrName => identity.getAttributeValue(attrName);
 
 export const getRole = () => getIdentityAttribute(ATTRIBUTES.Role);

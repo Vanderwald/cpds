@@ -1,8 +1,4 @@
-const DocTypes = {
-  PORT: "SCHIPMENT",
-  SCHIPMENT: "SCHIPMENT",
-  SCHIP: "SCHIPMENT",
-  CARGO: "SCHIPMENT"
-};
-
-module.exports = DocTypes;
+export const PORT = "PORT";
+export const SHIPMENT = "SHIPMENT";
+export const SHIP = "SHIP";
+export const CARGO = "CARGO";
