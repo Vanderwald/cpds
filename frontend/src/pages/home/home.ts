@@ -4,25 +4,30 @@ import { NavController } from 'ionic-angular';
 import moment from 'moment';
 import { NotificationCenterPage } from '../../pages/notification-center/notification-center';
 import { AuthService } from '../../services/auth.service';
-import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  vessel: any = [];
+  vessel = {
+    _id: '5bc0850332c508ab3037ca77',
+    berthName: 537,
+    vesselNumber: 548,
+    vesselName: 'Horn',
+    department: 'ISR',
+    arrival: 'PRG',
+    ata: 'Sun Dec 21 2014 10:06:18 GMT+0000 (UTC)',
+    eta: moment('Wed Aug 02 2017 02:29:57 GMT+0000 (UTC)').format('DD/MM/YY hh:mm')
+  };
 
-  constructor(public navCtrl: NavController, 
-    public authService: AuthService,
-    db: AngularFirestore) {
-       const collection: AngularFirestoreCollection<any> = db.collection('vessels')
-      console.log('qwjorqwjr', collection);
-      const collection$: Observable<any> = collection.valueChanges()
-      this.vessels = collection;
-      collection$.subscribe(data => console.log(data) )
-    }
+  constructor(public navCtrl: NavController, public authService: AuthService) {}
+
+  goToNotifs() {
+    console.log('show action');
+
+    this.navCtrl.push(NotificationCenterPage, { vessel: { id: 'test' } });
+  }
 
   logoutUser() {
     this.authService.logout();

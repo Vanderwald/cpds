@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActionSheetController, NavController } from 'ionic-angular';
-import {PortCallPage} from '../../pages/port-call/port-call';
+import { PortCallPage } from '../../pages/port-call/port-call';
 
 @Component({
   selector: 'vessel',
@@ -24,7 +24,7 @@ export class VesselComponent {
           text: 'Port call',
           handler: () => {
             console.log('go to port call');
-            this.navCtrl.push(PortCallPage, {vessel: {id: '12345'}});
+            this.navCtrl.push(PortCallPage, { vessel: { id: this.vessel.vesselName } });
           }
         },
         {

@@ -8,10 +8,11 @@ page-home {
   }
 
   #notifications-badge {
-    background-color: red;
+    // background-color: red;
     position: absolute;
     top: -3px;
-    right: -3px;
+    right: 0px;
     border-radius: 100%;
+    padding: 3px 6px;
   }
 }
