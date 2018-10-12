@@ -1,10 +1,9 @@
 import { HomePage } from './../home/home';
 import { RegisterPage } from './../register/register';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -16,10 +15,6 @@ export class LoginPage {
     public navParams: NavParams,
     public authService: AuthService,
     public alertCtrl: AlertController) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
   }
 
   loginUser() {
