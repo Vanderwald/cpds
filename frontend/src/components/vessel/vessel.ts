@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the VesselComponent component.
@@ -11,12 +11,13 @@ import { Component } from '@angular/core';
   templateUrl: 'vessel.html'
 })
 export class VesselComponent {
-
   text: string;
+
+  @Input()
+  vessel;
 
   constructor() {
     console.log('Hello VesselComponent Component');
     this.text = 'Hello World';
   }
-
 }
