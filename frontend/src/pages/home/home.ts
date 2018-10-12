@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import moment from 'moment';
+import { NotificationCenterPage } from '../../pages/notification-center/notification-center';
 
 @Component({
   selector: 'page-home',
@@ -19,4 +20,10 @@ export class HomePage {
   };
 
   constructor(public navCtrl: NavController) {}
+
+  goToNotifs() {
+    console.log('show action');
+
+    this.navCtrl.push(NotificationCenterPage, { vessel: { id: 'test' } });
+  }
 }
