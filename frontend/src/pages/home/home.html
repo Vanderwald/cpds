@@ -4,8 +4,10 @@
       Ionic Blank
     </ion-title>
     <ion-buttons end>
-        <button ion-button icon-only (click)="goToNotifs()">
-            <ion-icon name="notifications"></ion-icon>
+        <button id="notification-button" ion-button icon-only (click)="goToNotifs()">
+            <ion-icon name="notifications">
+                <ion-badge id="notifications-badge" color="danger">1</ion-badge>
+            </ion-icon>
         </button>
         <button ion-button icon-only (click)="logoutUser()">
             <ion-icon name="log-out"></ion-icon>
