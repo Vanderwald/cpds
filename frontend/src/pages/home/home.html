@@ -8,11 +8,24 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <div class="row">
+    <div class="left-content">
+      <ion-list>
+        <ion-item *ngFor="let i of items">{{i}}</ion-item>
+      </ion-list>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+    <div class="right-content">
+      <div class="dashboard-info">
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      </div>
+      <div class="dashboard-info">
+
+      </div>
+    </div>
+  </div>
+
 </ion-content>
