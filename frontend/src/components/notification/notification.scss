@@ -1,7 +1,7 @@
 notification {
   .notification {
     // display: flex;
-    background-color: rgba(69, 95, 109, 1);
+    background-color: rgba(238, 237, 239, 1);
     // height: 50px;
     border-radius: 5px;
     margin-bottom: 8px;
@@ -9,9 +9,15 @@ notification {
     align-items: center;
   }
   .text {
-    color: white;
+    color: rgba(69, 95, 109, 1);
   }
   .header {
-    display: flex;
+    // display: flex;
+
+    .text {
+      color: rgba(31, 51, 64, 1);
+      font-size: 1.4em;
+      font-weight: 500;
+    }
   }
 }

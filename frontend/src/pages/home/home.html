@@ -17,8 +17,11 @@
 </ion-header>
 
 <ion-content padding>
- <vessel [vessel]="vessel"></vessel>
- <vessel [vessel]="vessel"></vessel>
+    <div ng-for="vessel in vessels">
+      <vessel [vessel]="vessel"></vessel>
+    </div>
+
+ <!-- <vessel [vessel]="vessel"></vessel> -->
 
  <!-- <button full ion-button color="danger" (click)="logoutUser()">Logout</button> -->
 </ion-content>
