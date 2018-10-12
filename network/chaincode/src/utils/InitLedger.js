@@ -5,50 +5,59 @@ import Port from "../models/Port.model";
 import Shipment from "../models/Shipment.model";
 
 async function init(stub) {
-  const cargo = new Cargo("cargo-1", {
+  const cargo = new Cargo("CARGO-1", {
     docType: CARGO,
-    id: "cargo-1",
+    id: "CARGO-1",
     type: "MyType",
     weight: "100",
     containerCount: "1"
   });
 
-  const cargoUpdate = new Cargo("cargo-1", {
+  const cargoUpdate = new Cargo("CARGO-1", {
     docType: CARGO,
-    id: "cargo-1",
+    id: "CARGO-1",
     type: "MyType",
     weight: "101",
     containerCount: "1"
   });
 
-  const port = new Port("port-1", {
+  const port = new Port("PORT-1", {
     docType: PORT,
-    id: "port-1",
+    id: "PORT-1",
     city: "NotMurica",
     country: "MURICA",
     name: "myName"
   });
 
-  const ship = new Ship("ship-1", {
+  const port2 = new Port("PORT-2", {
+    docType: PORT,
+    id: "PORT-2",
+    city: "NotMurica",
+    country: "MURICA",
+    name: "myName"
+  });
+
+  const ship = new Ship("SHIP-1", {
     docType: SHIP,
-    id: "ship-1",
+    id: "SHIP-1",
     modelNumber: "1234",
     owner: "me"
   });
 
-  const shipment = new Shipment("shipment-1", {
+  const shipment = new Shipment("SHIPMENT-1", {
     docType: SHIPMENT,
-    id: "shipment-123",
+    id: "SHIPMENT-123",
     startingPort: "Barcelona",
     endingPort: "Amsterdam",
     startingTimestamp: "1234",
     endingTimestamp: "1235",
-    ship: "ship-1",
-    cargo: "cargo-1"
+    ship: "SHIP-1",
+    cargo: "CARGO-1"
   });
 
   await stub.putState(cargo.getKey(), cargo.getAsBytes());
   await stub.putState(port.getKey(), port.getAsBytes());
+  await stub.putState(port2.getKey(), port2.getAsBytes());
   await stub.putState(ship.getKey(), ship.getAsBytes());
   await stub.putState(shipment.getKey(), shipment.getAsBytes());
 
