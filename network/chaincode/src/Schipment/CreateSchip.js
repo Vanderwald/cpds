@@ -5,6 +5,8 @@ import { exists } from "../Services/QueryService";
 async function CreateSchip(stub, { key, value }) {
   const schip = new Schip(key, value);
 
+  console.log(value);
+
   // Check if key already exists
   const keyExists = await exists(stub, key);
   if (keyExists) {

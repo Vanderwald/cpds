@@ -31,11 +31,11 @@ printf "\n%40s\n" "$(tput setaf 4)Chaincode $CHAINCODE_NAME version $versionNumb
 # Instantiate the chaincode (Calling the Init function)
 docker exec -e $arg1 -e $arg2 cli peer chaincode instantiate -l node -n $CHAINCODE_NAME -v $versionNumber -C $CHANNEL_NAME -c '{"Args":[""]}' -o $ORDERER_ADDR
 printf "\n%40s\n" "$(tput setaf 4)Chaincode $CHAINCODE_NAME version $versionNumber initiated$(tput sgr0)"
-sleep 6
+sleep 10
 
 
 # Invoking instantiate function
-# docker exec -e $arg1 -e $arg2  cli peer chaincode invoke -C $CHANNEL_NAME -n $CHAINCODE_NAME -c '{"function":"watchmovement_create","Args":[""]}'
+#docker exec -e $arg1 -e $arg2  cli peer chaincode invoke -C $CHANNEL_NAME -n $CHAINCODE_NAME -c '{"function":"createSchip","Args":["{`id`: `SCHIP-1`, value: {docType: SCHIP, id: SCHIP-1, modelNumber: PU-527, owner: PORT-2}"]}'
 # sleep 2
 
 

@@ -3,10 +3,6 @@ import "@babel/polyfill";
 import shim from "fabric-shim";
 
 // Invocations/Queries
-import recordWatch from "./Watch/Create";
-import queryAllWatch from "./Watch/QueryAll";
-import queryById from "./Watch/Query";
-
 import createPort from "./Schipment/CreatePort";
 import createCargo from "./Schipment/CreateCargo";
 import createSchip from "./Schipment/CreateSchip";
@@ -36,9 +32,6 @@ const Chaincode = class {
 
   async Init() {
     // Bind other functions
-    this.recordWatch = recordWatch;
-    this.queryWatchById = queryById;
-    this.queryAllWatches = queryAllWatch;
 
     this.createPort = createPort;
     this.createCargo = createCargo;
