@@ -32,13 +32,13 @@ const Chaincode = class {
     }
   }
 
-  async Init() {
-    this.init = () => init();
+  async Init(stub) {
+    await init(stub);
     this.createPort = createPort;
     this.createCargo = createCargo;
     this.createShip = createShip;
     this.createShipment = createShipment;
-    this.history = key => queryAuditTrail(key);
+    this.history = (myStub, { key }) => queryAuditTrail(myStub, key);
 
     return shim.success();
   }
