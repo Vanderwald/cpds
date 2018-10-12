@@ -6,7 +6,10 @@ import { exists, queryById } from "../Services/QueryService";
 import { fromState } from "../utils/Parser";
 
 async function CreateSchipment(stub, { key, value }) {
-  const { startingPort, endingPort, cargo, schip } = value;
+  const { startingPort, endingPort, cargo, ship } = value;
+
+  console.log(key);
+  console.log(value);
 
   let keyExists = await exists(stub, startingPort);
   if (!keyExists) {
@@ -23,20 +26,24 @@ async function CreateSchipment(stub, { key, value }) {
     throw new Error(ErrMsg.DoesntExist(cargo));
   }
 
-  keyExists = await exists(stub, schip);
+  keyExists = await exists(stub, ship);
   if (!keyExists) {
-    throw new Error(ErrMsg.DoesntExist(schip));
+    throw new Error(ErrMsg.DoesntExist(ship));
   }
+
+  console.log("done checking");
 
   const port1Value = await queryById(stub, startingPort);
   const port2Value = await queryById(stub, endingPort);
   const cargoValue = await queryById(stub, cargo);
-  const schipValue = await queryById(stub, schip);
+  const schipValue = await queryById(stub, ship);
 
   const port1 = fromState(port1Value);
   const port2 = fromState(port2Value);
   const cargoObject = fromState(cargoValue);
   const schipObject = fromState(schipValue);
+
+  console.log("Done parsing");
 
   value.startingPort = port1;
   value.endingPort = port2;
@@ -44,6 +51,8 @@ async function CreateSchipment(stub, { key, value }) {
   value.schip = schipObject;
 
   const schipment = new Schipment(key, value);
+
+  console.log("created new shipment");
 
   // Check if key already exists
   keyExists = await exists(stub, key);
