@@ -29,7 +29,7 @@ services:
     container_name: orderer.example.com
     image: hyperledger/fabric-orderer:1.2.0
     environment:
-      - ORDERER_GENERAL_GENESISPROFILE=SampleDevModeSolo orderer # Dev config
+      # - ORDERER_GENERAL_GENESISPROFILE=SampleDevModeSolo orderer # Dev config
       - ORDERER_GENERAL_LOGLEVEL=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
@@ -70,8 +70,8 @@ services:
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
-    # command: peer node start
-    command: peer node start --peer-chaincodedev=true
+    command: peer node start
+    # command: peer node start --peer-chaincodedev=true
     ports:
       - 7051:7051
       - 7053:7053
