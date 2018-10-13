@@ -23,12 +23,12 @@ export class HomePage {
       this.vessels = data;
     });
     fireStore.firestore.settings({ timestampsInSnapshots: true });
-    const notificationCollection: AngularFirestoreCollection<any> = fireStore.collection(
+    const notificationCollections: AngularFirestoreCollection<any> = fireStore.collection(
       'notifications',
       notification => notification.orderBy('timestamp')
     );
-    const notificationCollection$: Observable<any> = collection.valueChanges();
-    collection$.subscribe(data => {
+    const notificationCollection$: Observable<any> = notificationCollections.valueChanges();
+    notificationCollection$.subscribe(data => {
       this.notifications = data;
     });
   }
