@@ -7,6 +7,7 @@ export class AuthService {
 
   private isLoggedIn = false;
   private database = firebase.database().ref('/chainport-hackaton/vessels');
+  private user;
 
   constructor(public afAuth: AngularFireAuth) { }
 
@@ -30,5 +31,13 @@ export class AuthService {
 
   authenticated() : boolean {
     return this.isLoggedIn;
+  }
+
+  setUser(user) {
+    this.user = user;
+  }
+
+  getUser() {
+    return this.user;
   }
 }

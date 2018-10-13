@@ -1,7 +1,7 @@
-import {HomePage} from './../home/home';
-import {RegisterPage} from './../register/register';
+import {HomePage} from '../home/home';
+import {RegisterPage} from '../register/register';
 import {Component} from '@angular/core';
-import {NavController, NavParams, AlertController} from 'ionic-angular';
+import {NavController} from 'ionic-angular';
 import {AuthService} from '../../services/auth.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {AuthService} from '../../services/auth.service';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  registerCredentials = {email: 'carrier@gmail.com', password: 'carrier'};
+  registerCredentials = {email: 'carrier@chainport.com', password: 'chainport'};
   hasError = false;
   errorMessage;
 
@@ -23,6 +23,7 @@ export class LoginPage {
     this.authService.login(email, password)
       .then((user) => {
         console.log(user);
+        this.authService.setUser(user);
         this.navCtrl.setRoot(HomePage)
       })
       .catch((error) => {
