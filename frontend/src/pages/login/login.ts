@@ -22,7 +22,6 @@ export class LoginPage {
     const {email, password} = this.registerCredentials;
     this.authService.login(email, password)
       .then((user) => {
-        console.log(user);
         this.authService.setUser(user);
         this.navCtrl.setRoot(HomePage)
       })

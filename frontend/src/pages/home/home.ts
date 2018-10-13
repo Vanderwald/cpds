@@ -20,15 +20,16 @@ export class HomePage {
     const collection: AngularFirestoreCollection<any> = fireStore.collection('vessels');
     const collection$: Observable<any> = collection.valueChanges();
     collection$.subscribe(data => {
+      data.map(vessel => vessel.ETA = this.setVesselETA(vessel.ETA));
       this.vessels = data;
     });
     fireStore.firestore.settings({ timestampsInSnapshots: true });
-    const notificationCollection: AngularFirestoreCollection<any> = fireStore.collection(
+    const notificationCollections: AngularFirestoreCollection<any> = fireStore.collection(
       'notifications',
-      notification => notification.orderBy('timestamp')
+      notification => notification.orderBy('timestamp', 'desc')
     );
-    const notificationCollection$: Observable<any> = collection.valueChanges();
-    collection$.subscribe(data => {
+    const notificationCollection$: Observable<any> = notificationCollections.valueChanges();
+    notificationCollection$.subscribe(data => {
       this.notifications = data;
     });
   }
@@ -39,5 +40,11 @@ export class HomePage {
 
   logoutUser() {
     this.navCtrl.setRoot(LoginPage);
+  }
+
+  setVesselETA(ETA) {
+    let t = new Date(1970, 0, 1);
+    t.setSeconds(ETA.seconds);
+    return t;
   }
 }

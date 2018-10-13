@@ -4,7 +4,7 @@
   <div class="mid-content">
     <p class="bold title">{{vessel.vesselName}}</p>
     <ion-icon name="boat" class="icon"></ion-icon>
-    <p class="secundary-text">ETA {{vessel.eta}}</p>
+    <p class="secundary-text">ETA {{vessel.ETA | date:'short'}}</p>
   </div>
   <p class="bold">{{vessel.departure}}</p>
 </div>
