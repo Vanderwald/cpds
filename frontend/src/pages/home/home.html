@@ -6,7 +6,7 @@
     <ion-buttons end>
         <button id="notification-button" ion-button icon-only (click)="goToNotifs()">
             <ion-icon name="notifications">
-                <ion-badge id="notifications-badge" color="danger">1</ion-badge>
+                <ion-badge *ngIf="notifications" id="notifications-badge" color="danger">{{notifications.length}}</ion-badge>
             </ion-icon>
         </button>
         <button ion-button icon-only (click)="logoutUser()">
