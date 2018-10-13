@@ -2,8 +2,8 @@ import { LoginPage } from '../login/login';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NotificationCenterPage } from '../notification-center/notification-center';
-import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
-import {Observable} from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'page-home',
@@ -12,11 +12,24 @@ import {Observable} from 'rxjs';
 export class HomePage {
   vessels: AngularFirestoreCollection<any>;
 
+  notifications: AngularFirestoreCollection<any>;
+
+  // constructor(private fireStore: AngularFirestore) {
+  // }
   constructor(public navCtrl: NavController, private fireStore: AngularFirestore) {
     const collection: AngularFirestoreCollection<any> = fireStore.collection('vessels');
     const collection$: Observable<any> = collection.valueChanges();
     collection$.subscribe(data => {
       this.vessels = data;
+    });
+    fireStore.firestore.settings({ timestampsInSnapshots: true });
+    const notificationCollection: AngularFirestoreCollection<any> = fireStore.collection(
+      'notifications',
+      notification => notification.orderBy('timestamp')
+    );
+    const notificationCollection$: Observable<any> = collection.valueChanges();
+    collection$.subscribe(data => {
+      this.notifications = data;
     });
   }
 
