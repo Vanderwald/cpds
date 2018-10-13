@@ -1,26 +1,20 @@
 import { Component } from '@angular/core';
-import moment from 'moment';
-
-/**
- * Generated class for the NotificationCenterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'page-notification-center',
   templateUrl: 'notification-center.html'
 })
 export class NotificationCenterPage {
-  notification = {
-    vesselname: 'Horn',
-    timestamp: moment(new Date()).format('hh:mm'),
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis non enim et malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce efficitur velit ut mattis pharetra. Nulla convallis dolor id mattis pharetra. Suspendisse interdum gravida metus vestibulum tincidunt'
-  };
+  notifications;
 
-  constructor() {
-
+  constructor(private fireStore: AngularFirestore) {
+    fireStore.firestore.settings({timestampsInSnapshots: true});
+    const collection: AngularFirestoreCollection<any> = fireStore.collection('notifications', notification => notification.orderBy('timestamp'));
+    const collection$: Observable<any> = collection.valueChanges();
+    collection$.subscribe(data => {
+      this.notifications = data;
+    });
   }
 }

@@ -11,6 +11,7 @@ import { LoginPage } from '../pages/login/login';
 })
 export class MyApp {
   rootPage:any = LoginPage;
+  // rootPage:any = HomePage;
   vessels: Observable<any[]>;
   users: Observable<any[]>;  
   private valuesCollection: AngularFirestoreCollection<any>;
@@ -21,22 +22,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-
       this.valuesCollection = db.collection<any>('vessels');
-
       this.vessels = db.collection('vessels').valueChanges();
       this.users = db.collection('users').valueChanges();
-
-      // this.valuesCollection.add({
-      //   _id: '5bc0850332c508ab3037ca77',
-      //   berthName: 537,
-      //   vesselNumber: 548,
-      //   vesselName: 'Horn',
-      //   department: 'Israel',
-      //   arrival: 'Paraguay',
-      //   ata: 'Sun Dec 21 2014 10:06:18 GMT+0000 (UTC)',
-      //   eta: moment('Wed Aug 02 2017 02:29:57 GMT+0000 (UTC)').format('DD/MM/YY hh:mm')
-      // });
     });
   }
 }

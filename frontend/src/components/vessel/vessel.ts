@@ -22,8 +22,7 @@ export class VesselComponent {
         {
           text: 'Port call',
           handler: () => {
-            console.log('go to port call');
-            this.navCtrl.push(PortCallPage, { vessel: { id: this.vessel.vesselName } });
+            this.navCtrl.push(PortCallPage, { vessel: this.vessel });
           }
         },
         {

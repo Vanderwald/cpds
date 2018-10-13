@@ -1,5 +1,5 @@
-import { AuthService } from './../services/auth.service';
-import { LoginPage } from './../pages/login/login';
+import { AuthService } from '../services/auth.service';
+import { LoginPage } from '../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -9,14 +9,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ComponentsModule } from '../components/components.module';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { environment } from '../environments/environments';
 import {NotificationCenterPage} from '../pages/notification-center/notification-center';
 import {PortCallPage} from '../pages/port-call/port-call';
 import { RegisterPage } from '../pages/register/register';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { firebaseConfig } from './credentials';
 
 @NgModule({
   declarations: [
@@ -30,11 +30,10 @@ import { RegisterPage } from '../pages/register/register';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(environment.firebase),
+    ComponentsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule,
-    AngularFireStorageModule,
-    ComponentsModule
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

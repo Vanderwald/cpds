@@ -9,21 +9,20 @@ import {AuthService} from '../../services/auth.service';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  registerCredentials = {email: 'ouwe@pee.com', password: 'qweqwe'};
+  registerCredentials = {email: 'carrier@gmail.com', password: 'carrier'};
   hasError = false;
   errorMessage;
 
   constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public authService: AuthService,
-              public alertCtrl: AlertController) {
+              public authService: AuthService) {
   }
 
   loginUser() {
     this.hasError = false;
     const {email, password} = this.registerCredentials;
     this.authService.login(email, password)
-      .then(() => {
+      .then((user) => {
+        console.log(user);
         this.navCtrl.setRoot(HomePage)
       })
       .catch((error) => {

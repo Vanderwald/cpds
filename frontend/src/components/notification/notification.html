@@ -2,7 +2,7 @@
 <div class="notification">
   <div class="header">
     <span class="text">
-        {{notification.timestamp}} - {{notification.vesselname}}
+        {{notification.timestamp | date:'short'}} - {{notification.vesselName}}
     </span>
   </div>
   <p class="text">

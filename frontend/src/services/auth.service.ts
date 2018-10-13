@@ -1,41 +1,28 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import firebase from "firebase";
 
 @Injectable()
 export class AuthService {
 
   private isLoggedIn = false;
+  private database = firebase.database().ref('/chainport-hackaton/vessels');
 
   constructor(public afAuth: AngularFireAuth) { }
 
   register(email, password) {
     this.afAuth.auth.createUserWithEmailAndPassword(email, password).catch(function(error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log('errorCode', errorCode);
-      console.log('errorCode', errorMessage);
+
     });
   }
 
   login(email, password) {
-    /*this.afAuth.auth.signInWithEmailAndPassword(email, password)
-    .then(() => {
-      this.isLoggedIn = true;
-    })
-    .catch(function(error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log('errorCode', errorCode);
-      console.log('errorCode', errorMessage);
-      return;
-    });*/
     return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
   logout() {
     this.afAuth.auth.signOut().then(() => {
       this.isLoggedIn = false;
-      console.log('Signed out');
     }).catch(function(error) {
       console.log('Sign out issue', error);
     });

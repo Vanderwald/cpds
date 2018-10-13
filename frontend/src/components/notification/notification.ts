@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 /**
  * Generated class for the NotificationComponent component.
@@ -10,9 +10,17 @@ import { Component, Input } from '@angular/core';
   selector: 'notification',
   templateUrl: 'notification.html'
 })
-export class NotificationComponent {
+export class NotificationComponent implements OnInit {
   @Input()
   notification;
 
-  constructor() {}
+  constructor() {
+
+  }
+
+  ngOnInit(): void {
+    let t = new Date(1970, 0, 1);
+    t.setSeconds(this.notification.timestamp.seconds);
+    this.notification.timestamp = t;
+  }
 }
