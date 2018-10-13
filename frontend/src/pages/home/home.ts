@@ -11,11 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class HomePage {
   vessels: AngularFirestoreCollection<any>;
-
   notifications: AngularFirestoreCollection<any>;
 
-  // constructor(private fireStore: AngularFirestore) {
-  // }
   constructor(public navCtrl: NavController, private fireStore: AngularFirestore) {
     const collection: AngularFirestoreCollection<any> = fireStore.collection('vessels');
     const collection$: Observable<any> = collection.valueChanges();
